@@ -8,6 +8,8 @@ services:
       - 27017:27017
     networks:
       - yolo-networks
+    volumes:
+      - yolo-volumes:/etc/mongodb/product
   yolo-client:
     image: ombongimn/yoloclient-img:v1
     environment:
@@ -28,3 +30,5 @@ services:
 networks:
   yolo-networks:
     driver: bridge
+volumes:
+  yolo-volumes:
