@@ -6,6 +6,8 @@ services:
      MONGO_DATABASE: yolomy
     ports:
       - 27017:27017
+    networks:
+      - yolo-networks
   yolo-client:
     image: ombongimn/yoloclient-img:v1
     environment:
@@ -13,9 +15,16 @@ services:
       PROXY_API: http://yolo-backend:5000/
     ports:
       - 3000:3000
+    networks:
+      - yolo-networks
   yolo-backend:
     image: ombongimn/yolobackend-img:v1
     environment:
       MONGODB_URI: mongodb://yolo-web-db:27017/yolomy
     ports:
       - 5000:5000 
+    networks:
+      - yolo-networks
+networks:
+  yolo-networks:
+    driver: bridge
