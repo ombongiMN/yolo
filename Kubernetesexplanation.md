@@ -1,5 +1,5 @@
 - It is pod where StatefulSets will be implemented because server.yml pulls yolo backend image that containes the mongodb implementation
-- Volumes will also be implemented in this file to persits data incase a pod is destroyed
+- Volumes will also be implemented in this file to persist data incase a pod is destroyed
 
 ## 4. CREATE server-k8storage.yml
 
