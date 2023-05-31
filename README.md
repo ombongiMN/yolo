@@ -1,23 +1,21 @@
-# Requirements
-Make sure that you have the following installed:
-- [node](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) 
-- npm 
-- [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) and start the mongodb service with `sudo service mongod start`
+How to deploy MERN Stack on Google Kubernetes Engine(GKE)
 
-## Navigate to the Client Folder 
- `cd client`
+GKE is GCP managed Kubernetes solution that lets you run and manage containerized applications in the cloud.
 
-## Run the folllowing command to install the dependencies 
- `npm install`
+## Objectives 
 
-## Run the folllowing to start the app
- `npm start`
+1: Dockerize the app and push the images to Google container registry
 
-## Open a new terminal and run the same commands in the backend folder
- `cd ../backend`
+2: Run the app on GCP GKE
 
- `npm install`
+3: Build the kubernetes cluster on GCP GKE
 
- `npm start`
+4: Access  clusters from outside
 
- ### Go ahead a nd add a product (note that the price field only takes a numeric input)
+5: Configure Kubectl with GKE Cluster
+
+## To set up the MongoDB have; A StorageClass, A Headless Service and StatefulSet
+
+The Storage class tells Kubernetes what kind of storage to use for the database nodes. On Google Cloud Platform storage choices are SSDs and hard disks
+
+Headless Service doesnt allocate IP address or forward traffic. When combined with statefulSets they can give you unique DNS addresses that let you directly access the pods
